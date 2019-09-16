@@ -1,0 +1,43 @@
+.custom-nav {
+    background-color: rgba(128, 128, 128, 0.082);
+  }
+  
+  .content {
+    background-color: grey;
+    flex-grow: 1;
+    transition: width 1s;
+    height:100%;
+  }
+  .customLinks{
+    font-size: 2em;
+    transition: all 0.5s ease;
+    margin-left: 0.5em;
+    width: 5em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color:black;
+  
+  }
+  
+  
+  
+  .customLinks:hover {
+    background-color: rgba(0, 0, 255, 0.158);
+    color:white ;
+  }
+  .customLinks.active{
+    background-color: rgba(0, 0, 255, 0.301);
+  }
+  
+  .custom-nav  .navbar-toggler-icon {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
+  }
+  .customNav{
+    align-content: center;
+    align-items: center;
+  }
+  
+  .customNav > a{
+    margin-top:0.2em;
+  }
