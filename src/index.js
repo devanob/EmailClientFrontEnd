@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'mobx-react';
-import RootStore from "./Email/Stores/rootStore"
-let  rootStoreInstance = new RootStore(null,null);
+import { configure } from 'mobx';
+import { BrowserRouter} from "react-router-dom";
+
+
+configure({
+    enforceActions: true,
+});
 
 
 //Inject Depenency Injection Root Store
 ReactDOM.render(
-<Provider  rootStore = {rootStoreInstance} >
-    <App />
-</Provider>,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
 document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

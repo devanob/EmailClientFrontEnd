@@ -1,21 +1,27 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import './App.css';
-import { observer, inject} from "mobx-react"
-import NavBar  from "./Email/Componets/NavBar"
-import InboxView from './Email/Componets/InboxView';
-import OutboxView from './Email/Componets/OutboxView';
+import './App.scss';
+import RenderRoutes from "./SurveyInterface/Route/RenderRoutes";
+import  MAIN_ROUTES from "./SurveyInterface/Route/MAIN_ROUTES";
+import "./SurveyInterface/Assets/css/react-transistions.css";
+import { useStores } from './SurveyInterface/hooks/use-stores'
+import { observer } from 'mobx-react';
+import data from './SurveyInterface/Data/PreInterView/Pages'
+
+
+
 //Entry Point Application
-function App(props) {
-  const uiEmailStore= props.rootStore.getChildStoreInstance("uiMessageStore");
-  const activeState= uiEmailStore.getActiveElement;
+function App() {
+  const { rootStore } = useStores();
+  const uiStore = rootStore.uiStore;
+  let style = {
+    height : uiStore.windowDimensions.height
+  }
   return (
-    <div className="container-generic">
-      <NavBar></NavBar>
-      {activeState === "INBOX" ? <InboxView></InboxView>: null}
-      {activeState === "OUTBOX" ? <OutboxView></OutboxView>: null}
+    <div style={style} className='app-container transition-container'>
+        <RenderRoutes routes={MAIN_ROUTES} />
     </div>
   );
 }
 
-export default inject("rootStore")(observer(App));
+export default observer(App);

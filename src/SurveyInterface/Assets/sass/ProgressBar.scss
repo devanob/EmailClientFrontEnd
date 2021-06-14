@@ -1,0 +1,20 @@
+.progress-bars-total-container{
+    display:flex;
+    margin: 25px;
+    .completed-progress,.in-progress-progress,.incomplete-progress{
+        .step-containers{
+            background-color: rgba(211, 211, 211, 1.0);
+            width:25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+    }
+    .in-progress-progress{
+        flex : 1
+    }
+    .completed-progress{
+        position: relative;
+        z-index: 100;
+    }
+
+}

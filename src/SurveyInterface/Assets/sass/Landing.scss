@@ -1,0 +1,38 @@
+.start-buttton-container{
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    .inner{
+        display:flex;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    .start-button{
+        font-size: 2rem;
+        svg,img{
+            width: 5rem;
+            height: 5rem;
+            margin-left: 1.5rem;
+        }
+    }
+    }
+    
+}
+
+.page-background{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    img,svg{
+        height:100%;
+        width:100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
